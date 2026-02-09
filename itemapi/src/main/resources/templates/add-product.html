@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Add Product</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f3f6;
+        }
+
+        .form-container {
+            width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+
+        button {
+            width: 100%;
+            background: #2874f0;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h2>Add New Product</h2>
+
+    <form action="/save-product" method="post" th:object="${item}">
+
+        <input type="text" placeholder="Product Name" th:field="*{name}" required>
+
+        <input type="text" placeholder="Description" th:field="*{description}" required>
+
+        <input type="number" placeholder="Price" th:field="*{price}" required>
+
+        <input type="text" placeholder="Image URL" th:field="*{imageUrl}" required>
+
+        <button type="submit">Save Product</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
