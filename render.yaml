@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: mini-flipkart-item-api
+    env: java
+    plan: free
+    buildCommand: cd itemapi && ./mvnw clean package
+    startCommand: cd itemapi && java -jar target/*.jar
